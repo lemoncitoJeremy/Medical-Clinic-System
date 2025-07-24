@@ -1,0 +1,6 @@
+{
+  "queries": {
+        "login": "SELECT * FROM user_accounts WHERE username = ? AND password = ?",
+        "sign_up": "INSERT INTO user_accounts (username, email, password) VALUES (?, ?, ?)"
+    }
+}

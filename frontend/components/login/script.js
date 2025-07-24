@@ -16,8 +16,10 @@ function handleLogin(){
             })
             .then(response => response.json())
             .then(data => {
-                console.log('Server response:', data);
-                //redirect to dashboard
+                sessionStorage.setItem('user', JSON.stringify({ data }));
+
+                // Redirect to dashboard
+                window.location.href = '../dashboard/dashboard.html';
             })
             .catch(error => {
                 console.error('Error:', error);

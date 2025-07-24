@@ -6,15 +6,12 @@ const dbQueries = require('./config.json');
 dotenv.config();
 const port = 3000
 
-const grantRoleAccess = (res, results) => {
-    for (let i = 0; i < results.length; i++) {
-        const res_dict = results[i];
-        if (res_dict["role"] === "admin") {
-            return res.json({ success: true, message: 'Login successful', role: "admin" });
-        } else {
-            return res.json({ success: true, message: 'Login successful', role: "user" });
-        }
-    }
+const returnAccessDict = (res, results) => {
+        const res_dict = results[0];
+        const username = res_dict["username"]
+        const role = res_dict["role"]
+        return res.json({ success: true, username: username, role: role});
+    
 };
 
 class Server {
@@ -63,12 +60,11 @@ class Server {
                 }
 
                 if (results.length > 0) {
-                    grantRoleAccess(res, results);
+                    returnAccessDict(res, results);
                 } else {
                     res.status(401).json({ success: false, message: 'Invalid credentials' });
                 }
             });
-            console.log("login succesful!")
         });
     }
 

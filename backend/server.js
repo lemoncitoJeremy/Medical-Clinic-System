@@ -3,7 +3,7 @@ const cors = require('cors');
 const mysql = require('mysql2');
 const dotenv = require('dotenv');
 const dbQueries = require('./config.json');
-dotenv.config();
+dotenv.config({ path: '../.env' });
 const port = 3000
 
 const returnAccessDict = (res, results) => {

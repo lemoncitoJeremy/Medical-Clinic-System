@@ -4,7 +4,7 @@ body {
       overflow: hidden;
     }
 
-nav.vertical-navbar {
+nav.navbar {
     height: 100vh;
     width: 150px;
     position: fixed;
@@ -12,9 +12,10 @@ nav.vertical-navbar {
     left: 0;
     background-color: #dee6e2;
     padding-top: 5px;
+    border-right: 1px solid ;
 }
 
-nav.vertical-navbar a {
+nav.navbar a {
     height: 40px;
     display: block;
     color: black;
@@ -26,7 +27,7 @@ nav.vertical-navbar a {
     align-content: center;
 }
 
-nav.vertical-navbar a:hover {
+nav.navbar a:hover {
     background-color: #a2cfb8;
 }
 
@@ -49,10 +50,10 @@ nav.vertical-navbar a:hover {
 }
 
 .main-content {
-    padding: 20px;
+    padding: 30px;
     height: 20vh;
-    background-color: #dee6e2;
-    
+    background-color: #ffffff;
+    border: 1px solid #adacac;
 }
 
 .sub-content {
